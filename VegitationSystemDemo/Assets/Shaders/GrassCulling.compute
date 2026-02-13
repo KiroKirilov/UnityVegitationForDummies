@@ -1,0 +1,45 @@
+#pragma kernel CullGrass
+
+struct GrassInstance
+{
+    float3 position;
+    float4 rotation;
+    float scale;
+};
+
+StructuredBuffer<GrassInstance> _AllInstances;
+AppendStructuredBuffer<uint> _VisibleIndices;
+
+float4 _FrustumPlanes[6];
+float3 _CameraPosition;
+float _MaxDistance;
+float _DensityFalloffStart;
+uint _InstanceCount;
+
+[numthreads(128, 1, 1)]
+void CullGrass(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= _InstanceCount) return;
+
+    float3 pos = _AllInstances[id.x].position;
+
+    float dist = distance(pos, _CameraPosition);
+    if (dist > _MaxDistance) return;
+
+    if (dist > _DensityFalloffStart)
+    {
+        float t = (dist - _DensityFalloffStart) / (_MaxDistance - _DensityFalloffStart);
+        uint hash = id.x * 2654435761u;
+        float threshold = (float)(hash & 0xFFFF) / 65535.0;
+        if (threshold < t * 0.7) return;
+    }
+
+    float radius = _AllInstances[id.x].scale * 1.0;
+    for (int i = 0; i < 6; i++)
+    {
+        if (dot(_FrustumPlanes[i].xyz, pos) + _FrustumPlanes[i].w + radius < 0)
+            return;
+    }
+
+    _VisibleIndices.Append(id.x);
+}
