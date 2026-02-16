@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:skill.sh)",
+      "WebSearch",
+      "WebFetch(domain:skillsmp.com)",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}
