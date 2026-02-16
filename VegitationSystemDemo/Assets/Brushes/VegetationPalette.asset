@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc104539d472b6f41984d5c97e254238, type: 3}
+  m_Name: VegetationPalette
+  m_EditorClassIdentifier: Assembly-CSharp::VegetationPalette
+  grassRatio: 0.8
+  grassPrefabs:
+  - prefab: {fileID: 154506, guid: 9ff3394075308d5459705bc7ba6f9f05, type: 3}
+    weight: 1
+  - prefab: {fileID: 128460, guid: 852cb8c41e01737438082cc349cdd49d, type: 3}
+    weight: 1
+  - prefab: {fileID: 135544, guid: 238b71ad9f49264488e0af380e7eca8b, type: 3}
+    weight: 1
+  - prefab: {fileID: 189252, guid: cc957b04a70bdf04187142ab9d8a7f33, type: 3}
+    weight: 1
+  - prefab: {fileID: 155842, guid: af33bf1514ece2845845fbb68d1ca5ff, type: 3}
+    weight: 1
+  - prefab: {fileID: 169834, guid: a046bf9b8d2845a4baa366e3c7298672, type: 3}
+    weight: 1
+  - prefab: {fileID: 173864, guid: 55be384447729584fb1682d6f37d13c9, type: 3}
+    weight: 1
+  - prefab: {fileID: 198238, guid: 8069d1c9cfba1f04baa82e7a7731dc34, type: 3}
+    weight: 1
+  grassSettings:
+    randomYRotation: 1
+    tiltRange: {x: -8, y: 8}
+    scaleRange: {x: 0.7, y: 1.3}
+  flowerPrefabs:
+  - prefab: {fileID: 167462, guid: 3e291c6ecf516b24caee1091c2cca8e9, type: 3}
+    weight: 1
+  - prefab: {fileID: 192088, guid: 7868ff2f58dad16459e3d73fb13a245b, type: 3}
+    weight: 1
+  - prefab: {fileID: 165924, guid: e0faf13933d005f43acc1a7c545a9b8e, type: 3}
+    weight: 1
+  - prefab: {fileID: 139628, guid: 25a7ab28714e1eb4f83d7639d88948c0, type: 3}
+    weight: 1
+  flowerSettings:
+    randomYRotation: 1
+    tiltRange: {x: -3, y: 3}
+    scaleRange: {x: 0.85, y: 1.15}

@@ -177,7 +177,7 @@ public class VegetationBrushWindow : EditorWindow
             _lineThickness = EditorGUILayout.Slider("Line Thickness", _lineThickness, 0.5f, 10f);
         }
 
-        _density = EditorGUILayout.IntSlider("Density", _density, 1, 20);
+        _density = EditorGUILayout.IntSlider("Density", _density, 1, 100);
     }
 
     void DrawSurfaceSection()
