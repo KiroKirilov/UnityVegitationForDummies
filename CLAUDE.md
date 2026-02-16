@@ -193,4 +193,3 @@ When asked to debug or troubleshoot:
 - Keep changes minimal and focused
 - Don't add unnecessary complexity
 - Test assumptions by reading the actual implementation
-- Match existing conventions in the codebase (namespace `DaisyParty.Rendering`, etc.)

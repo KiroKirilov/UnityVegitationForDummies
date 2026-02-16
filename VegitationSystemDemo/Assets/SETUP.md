@@ -17,13 +17,13 @@ Copy the entire `VegetationSystem/` folder into your Unity project's `Assets/` d
 You need two types of materials:
 
 **Scene Material (for brush-spawned GameObjects):**
-- Create a material using the `DaisyParty/VegetationWind` shader
+- Create a material using the `VegetationForDummies/VegetationWind` shader
 - Assign your grass/flower albedo texture to `Base Map`
 - Set `Alpha Cutoff` (typically 0.5 for alpha-tested foliage)
 - Adjust wind settings to taste (Speed, Strength, Direction, Noise Scale, Frequency)
 
 **Indirect Material (for GPU-rendered baked instances):**
-- Create a material using the `DaisyParty/VegetationWindIndirect` shader
+- Create a material using the `VegetationForDummies/VegetationWindIndirect` shader
 - Same property setup as the scene material
 - You may want separate indirect materials for grass vs flowers if they use different textures
 - The baker will ask for these when baking
@@ -38,7 +38,7 @@ For each grass/flower variant:
 
 ### 4. Create a Vegetation Palette
 
-1. Right-click in Project window > `Create > DaisyParty > Vegetation Palette`
+1. Right-click in Project window > `Create > VegetationForDummies > Vegetation Palette`
 2. Add your grass prefabs to the **Grass Prefabs** list
 3. Add flower prefabs to the **Flower Prefabs** list
 4. Adjust **Grass Ratio** (0 = all flowers, 1 = all grass)
@@ -48,7 +48,7 @@ For each grass/flower variant:
 ### 5. Set Up the GrassRenderer (for baked/indirect rendering)
 
 1. Create an empty GameObject in your scene, name it `GrassRenderer`
-2. Add the `GrassRenderer` component (namespace: `DaisyParty.Rendering`)
+2. Add the `GrassRenderer` component (namespace: `VegetationForDummies.Rendering`)
 3. Assign the `GrassCulling` compute shader to the **Culling Shader** field
 4. Adjust **Max Render Distance** and **Density Falloff Start** as needed
 5. The **Instance Data** and **Mesh Variants** fields will be populated automatically by the baker

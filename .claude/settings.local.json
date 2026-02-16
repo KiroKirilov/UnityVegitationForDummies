@@ -4,7 +4,8 @@
       "WebFetch(domain:skill.sh)",
       "WebSearch",
       "WebFetch(domain:skillsmp.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(xargs cat:*)"
     ]
   }
 }

@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace DaisyParty.Rendering
-{
     public class GrassRenderer : MonoBehaviour
     {
         [Header("Data")]
@@ -304,4 +302,3 @@ namespace DaisyParty.Rendering
                 frustumPlaneCache[i] = new Vector4(planeCache[i].normal.x, planeCache[i].normal.y, planeCache[i].normal.z, planeCache[i].distance);
         }
     }
-}

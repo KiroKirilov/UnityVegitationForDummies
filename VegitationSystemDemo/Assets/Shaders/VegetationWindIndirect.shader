@@ -1,4 +1,4 @@
-Shader "DaisyParty/VegetationWindIndirect"
+Shader "VegetationForDummies/VegetationWindIndirect"
 {
     Properties
     {

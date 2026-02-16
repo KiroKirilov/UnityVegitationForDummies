@@ -1,9 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace DaisyParty.Rendering
-{
-    [CreateAssetMenu(menuName = "DaisyParty/Grass Instance Data")]
+    [CreateAssetMenu(menuName = "Vegeration For Dummies/Grass Instance Data")]
     public class GrassInstanceData : ScriptableObject
     {
         [Serializable]
@@ -27,4 +25,3 @@ namespace DaisyParty.Rendering
         public Bounds worldBounds;
         public MeshTypeInfo[] meshTypes;
     }
-}

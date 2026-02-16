@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "VegetationPalette", menuName = "DaisyParty/Vegetation Palette")]
+[CreateAssetMenu(fileName = "VegetationPalette", menuName = "Vegeration For Dummies/Vegetation Palette")]
 public class VegetationPalette : ScriptableObject
 {
     [System.Serializable]

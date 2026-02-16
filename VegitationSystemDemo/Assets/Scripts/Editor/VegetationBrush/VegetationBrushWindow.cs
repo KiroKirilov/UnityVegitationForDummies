@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
-using DaisyParty.Rendering;
 
 public class VegetationBrushWindow : EditorWindow
 {
