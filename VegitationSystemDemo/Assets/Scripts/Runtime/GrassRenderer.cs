@@ -301,4 +301,37 @@ using UnityEngine.Rendering;
             for (int i = 0; i < 6; i++)
                 frustumPlaneCache[i] = new Vector4(planeCache[i].normal.x, planeCache[i].normal.y, planeCache[i].normal.z, planeCache[i].distance);
         }
+
+        public struct RenderStats
+        {
+            public int totalInstances;
+            public int meshGroupCount;
+            public int totalVertices;
+            public int totalTriangles;
+            public bool castsShadows;
+        }
+
+        public RenderStats GetStats()
+        {
+            var stats = new RenderStats();
+
+            if (groups == null)
+                return stats;
+
+            stats.meshGroupCount = groups.Count;
+            stats.castsShadows = shadowMode != ShadowCastingMode.Off;
+
+            foreach (var group in groups)
+            {
+                stats.totalInstances += group.instanceCount;
+
+                var mesh = meshVariants[group.meshType].mesh;
+                if (mesh == null) continue;
+
+                stats.totalTriangles += (int)(mesh.GetIndexCount(0) / 3) * group.instanceCount;
+                stats.totalVertices += mesh.vertexCount * group.instanceCount;
+            }
+
+            return stats;
+        }
     }

@@ -410,6 +410,52 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &411445965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411445967}
+  - component: {fileID: 411445966}
+  m_Layer: 0
+  m_Name: PerfOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &411445966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411445965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74d42861a6cbbc49b6f2e23f9963bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PerformanceOverlay
+  grassRenderer: {fileID: 1600760331}
+  updateInterval: 1
+--- !u!4 &411445967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411445965}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.53564, y: 1.16735, z: -9.66614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540306399
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,8 +485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d26168be43cc345b49eefac595b157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindController
-  windSpeed: 1
-  windStrength: 0.05
+  windSpeed: 2
+  windStrength: 0.1
   windDirection: {x: 1, y: 0.3}
   noiseScale: 0.5
   enableGusts: 0
@@ -450,7 +496,7 @@ MonoBehaviour:
   playerTransform: {fileID: 1706053062}
   playerRigidbody: {fileID: 1706053059}
   interactionRadius: 2
-  interactionStrength: 0.3
+  interactionStrength: 0.6
 --- !u!4 &540306401
 Transform:
   m_ObjectHideFlags: 0
@@ -713,7 +759,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 696448781293676533, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+    - {fileID: 1150964035454596192, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8855052669661678444, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
       insertIndex: -1
@@ -957,3 +1005,4 @@ SceneRoots:
   - {fileID: 540306401}
   - {fileID: 1706053057}
   - {fileID: 1600760332}
+  - {fileID: 411445967}
