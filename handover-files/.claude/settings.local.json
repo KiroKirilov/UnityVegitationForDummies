@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:skill.sh)",
+      "WebSearch",
+      "WebFetch(domain:skillsmp.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(xargs cat:*)",
+      "WebFetch(domain:docs.unity3d.com)",
+      "WebFetch(domain:catlikecoding.com)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:discussions.unity.com)"
+    ]
+  }
+}

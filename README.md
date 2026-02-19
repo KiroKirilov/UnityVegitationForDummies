@@ -100,63 +100,51 @@ The overall testing strategy looked as follows:
 
 > i want you to create plan about implementing a simple vegetation brush -> it should support grass prefabs as inputs, also flowers. Each needs to have randomization settings, like rotation and scale, as well what are the chances to place a flower so it can be more grassy or more flowery. The brush should be usable on a mesh, not on terrain, ideally in the scene editor. When using the brush i want to see a circle on the ground where things will be placed. It needs to have configurable density and size and for now just make it circular. Before you begin - RESEARCH ONLINE on how to approach this correctly cause we need to base it on a solid baseline design to iterate properly on it. We don't need industrial grade implementations, just keep it simple for now
 
-#### `palette_rework`
-*Session 2 – 2026-02-03*
+#### `palette_rework` (*Session 2 – 2026-02-03*)
 
 > Rework the SO to be more user friendly - I want it to have seprate grass/flowers prefabs on purpose. I want global controls for grass/flowers isntead of having to manually setup each one. I also want you to put good defaults for both. By default all items in the two collection should have an evenly spread distribution, but allow for customization. The other things liek rotation, titlt, scale should also be global for both colelctions (grass/flowers) and i want good default there too.
 
-#### `brush_surface_filtering`
-*Session 4 – 2026-02-06*
+#### `brush_surface_filtering` (*Session 4 – 2026-02-06*)
 
 > I want you to plan an extension of the vegitation brush. Fist you are required to get extrememly well familiar with it. Then i want you to make it so it has two extra optional settings -> OnlyUpFace, meaning it should only draw on meshes' up side, my platforms have a bit of a slope on the side and the brush currently sometimes paints on it and it's annoying clean up. The other options is layer mask - i want you to make it so i can choose which layers it draws on. sometimes it spawns stuff on npcs and bushes. These two settigns should work together or separately with no issues and shoud integrate nicely in the current solution
 
-#### `wind_research`
-*Session 3 – 2026-02-05*
+#### `wind_research` (*Session 3 – 2026-02-05*)
 
 > i have a few hundred grass objects + flowers in my intro scene. I want you to perform deep online research on efficient ways to add "wind" to it, so it isnt so static and feels more alive. Ideally i wont have to replace all grass or have to configure each piece separately but let's just get something working first. Inspect the scene via the .unity file to get a better idea of what is there, the vibe and the type of prefabs/veg objects we have
 
-#### `wind_bending_fix`
-*Session 3 – 2026-02-05*
+#### `wind_bending_fix` (*Session 3 – 2026-02-05*)
 
 > It's a start. Plan an improvement - make it more like real wind where the blades of grass dont just sway like they are on a sine wave, but bend to it a bit, currently they MOVE on the ground, the bottom of the blades should stay put where it is and only the upper bits of the blades/flowers are affected
 
-#### `player_interaction`
-*Session 3 – 2026-02-05*
+#### `player_interaction` (*Session 3 – 2026-02-05*)
 
 > Now that we have that in somewhat working order, plan another exapansion of hte feature - i want the grass to be ruffled when the player passes through it, It should make sense direction wise based on where the player is and how the blade itself is positioned relatively
 
-#### `grass_optimization_research`
-*Session 7 – 2026-02-06*
+#### `grass_optimization_research` (*Session 7 – 2026-02-06*)
 
 > This task is of the utmost importance. I want you to perform an extensive research. I've used the VegetationBrush and it's related objects and have a lot of grass in the scene to the point it's starting to lag a bit. The problem is i really like how it looks. Your task is to look at the full grass system we have with swaying in the wind and player rustling and everything and research and plan optimizations to make this less laggy while still keeping the dense grass look. If there are better overall solutions that require a more major rework of the grass system i am down as long as it keeps the dense look with optimized performance. USE AS MANY RESOURCES AS YOU PLEASE, I DONT MIND PAYING EXTRA FOR THIS QUERY, research, look for info, analyze before making any changes.
 
-#### `shader_lighting_fix`
-*Session 8 – 2026-02-06*
+#### `shader_lighting_fix` (*Session 8 – 2026-02-06*)
 
 > The grass is rendered but isnt receiving light from the sun, plan a way to introduce that
 
-#### `bake_rendering_investigation`
-*Session 9 – 2026-02-06*
+#### `bake_rendering_investigation` (*Session 9 – 2026-02-06*)
 
 > I want you to take a very deep look at the current grass baker and renderer and the shaders involded with indirect rendering and analyze the following issue - when i baked and setup the renderer - seeming all data is baked and in the SO (~31k items) but when actually rendering not all of it is there and it's placed wrong and some flowers are ther which arent in the regular gameobject setup and flwoers lose shape, color. Im not sure if the baking is too rudimentary or if the renddering is wrong but you need to analyze this and come up with a plan to upgrade the rendered and/or baking to keep the look the same. Look at the vegetation brush settings and how it places veg, specifically its randomization params to see what we need to keep in the bake and render later. !!THIS IS JUST A THEORY I HAVE, DO A PROPER INVETIGATION AND DONT TAKE MY WORD AS GOSPEL
 
-#### `brush_to_bake`
-*Session 15 – 2026-02-07*
+#### `brush_to_bake` (*Session 15 – 2026-02-07*)
 
 > I want you to investigate in complete depth - the vegitation brush, the grass baker, renderer and isntance editor. Then i want you to plan the implementation of the following feature -> i want the vegitation brush to be usable on the baked data directly similar to how editing it works via the editor - so in play mode i can turn on the brush and it can have a toggle/setup to put stuff in a baked data SO isntead of on the scene directly. Pay attention to how stuff is re-rendered and such cause this may cause a gpu usage spike and we dont want crashes
 
-#### `instance_editor_design`
-*Session 11 – 2026-02-07*
+#### `instance_editor_design` (*Session 11 – 2026-02-07*)
 
 > This is an extremely complex task and required precision and dilligence. I want you to look at the entire grass system we have - bakign and rendering and everything related. Then i want you to come up with an easy, visual way for me to edit/remove single assets from the bake - the problem is some of them are placed a little outside the platform and i want o manualyl be able to adjust them. Ideally this will control as if they're game objects - i'd be able to click to select and then move/rotate/scale/delete them. Think hard cause the runtime redered objects arent actually there in the scene - we will either need to do this in play mode or have special way of rendering the grass even when not in play mode. USE AS MANY RESOURCES AS YOU PLEASE, I DONT MIND PAYING EXTRA FOR THIS QUERY, reserach, look for info, analyze before deciding on aything.
 
-#### `editor_play_mode_redesign`
-*Session 13 – 2026-02-07*
+#### `editor_play_mode_redesign` (*Session 13 – 2026-02-07*)
 
 > No, still crashes. I want you to plan a complete redesign - i want it to work in play mode when the grass is already being rendered, so I want to be able to click on a piece of grass (probably in scene view?, but reasearch wahtveer works better) and just edit positon rotation scale and delete it. Research online on how to achieve this cause right now in playmode in the scene view the grass is visible but not clickable + im not sure how editing it runtime is gonna work. this needs quality research behind it. USE AS MANY RESOURCES AS YOU PLEASE, I DONT MIND PAYING EXTRA FOR THIS QUERY, reserach, look for info, analyze before making any decisions.
 
-#### `picker_precision`
-*Session 14 – 2026-02-07*
+#### `picker_precision` (*Session 14 – 2026-02-07*)
 
 > okay worked, but now i want you to investigate this problem both here and online -> in dense areas of grass its almost impossible to pick the one i want. Is it possible to have the clickabble area be closer to the actual mesh isntead of just a bounding box. If not think like a designer and propose solutions to get around this. USE AS MANY RESOURCES AS YOU PLEASE, I DONT MIND PAYING EXTRA FOR THIS QUERY, reserach, look for info, analyze before making any decisions
 
@@ -173,11 +161,18 @@ I used Claude Code exclusively for all development. The biggest challenge was th
 - Indirect shaders to support more of the baseline URP/Lit shaders properties like metallic, occlusions, normal maps
 
 ## Working System Evidence
+Running the sample scene WITHOUT GPU instancing and baking:
 
-> **[Screenshot 1]** – Vegetation brush painting grass onto a platform in the Unity Scene view, showing the circular brush preview and density settings.
+![FPS without GPU instancing](Docs/images/fps-raw.png)
+![Full screen without GPU instancing](Docs/images/full-screen-raw.png)
 
-> **[Screenshot 2]** – GPU-rendered vegetation in Play mode showing ~11,500 instances with wind animation and shadows, at ~7 draw calls.
+Runnig the sample scene WITH GPU instancing and baking:
 
+![FPS with GPU instancing](Docs/images/fps-gpu.png)
+![Full screen with GPU instancing](Docs/images/full-screen-gpu.png)
+
+Using the brush tool:
+![Using the brush tool](Docs/images/using-brush.png)
 ## Repository
 
 **[https://github.com/KiroKirilov/UnityVegitationForDummies](https://github.com/KiroKirilov/UnityVegitationForDummies)**
