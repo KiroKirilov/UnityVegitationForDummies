@@ -166,6 +166,12 @@ The overall testing strategy looked as follows:
 
 I used Claude Code exclusively for all development. The biggest challenge was the D3D12 GPU crash when building the instance editor (Module 5) – calling `Graphics.DrawMeshInstanced` during Unity's IMGUI pass caused an unrecoverable device error (`DXGI_ERROR_DEVICE_REMOVED`) that required a complete architectural redesign to work in Play mode instead. The GPU indirect rendering pipeline (Module 3) was the most technically demanding module overall, requiring compute shaders, custom URP-compatible indirect shaders with manual lighting, and iterative debugging of lighting integration (the grass initially rendered pitch black). Claude Code's cross-file reasoning (reading `.shader`, `.compute`, `.cs`, `.asset`, and crash dump files in a single session) and integrated web research were essential for these challenges. Unity MCP was used for initial scene setup and visual verification via direct Unity Editor manipulation.
 
+### Potential further improvements
+- Automatic generation of the indirect materials based on the source shader/material
+- Distance based shadow casting
+- Dynamic groups of prefabs so they're not just "grass" or "fowers" even though this tool can be used with any prefab
+- Indirect shaders to support more of the baseline URP/Lit shaders properties like metallic, occlusions, normal maps
+
 ## Working System Evidence
 
 > **[Screenshot 1]** – Vegetation brush painting grass onto a platform in the Unity Scene view, showing the circular brush preview and density settings.
@@ -174,7 +180,7 @@ I used Claude Code exclusively for all development. The biggest challenge was th
 
 ## Repository
 
-**[UnityVegetationForDummies](https://github.com/KiroKirilov/UnityVegitationForDummies)**
+**[https://github.com/KiroKirilov/UnityVegitationForDummies](https://github.com/KiroKirilov/UnityVegitationForDummies)**
 
 The vegetation system source code is located under:
 - `Assets/Scripts/Runtime/` – Runtime (GrassRenderer, GrassInstanceData, WindController, VegetationPalette)
