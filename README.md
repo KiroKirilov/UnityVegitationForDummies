@@ -161,6 +161,7 @@ I used Claude Code exclusively for all development. The biggest challenge was th
 - Indirect shaders to support more of the baseline URP/Lit shaders properties like metallic, occlusions, normal maps
 
 ## Working System Evidence
+Short demo video available in [handover-files/2026-02-19 23-21-55.mkv](handover-files/2026-02-19%2023-21-55.mkv)
 Running the sample scene WITHOUT GPU instancing and baking:
 
 ![FPS without GPU instancing](Docs/images/fps-raw.png)
